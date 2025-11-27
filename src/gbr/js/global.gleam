@@ -24,6 +24,9 @@ pub type WakeLockSentinal
 @external(javascript, "./dom/global_ffi.mjs", "self")
 pub fn self() -> Global
 
+@external(javascript, "./dom/global_ffi.mjs", "self")
+pub fn window() -> Window
+
 @external(javascript, "./dom/global_ffi.mjs", "encodeURI")
 pub fn encode_uri(a: String) -> String
 

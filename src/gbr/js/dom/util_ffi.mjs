@@ -1,17 +1,28 @@
 /**
  * Módulo c/ funções utilitárias.
  */
-import { BitArray as BitArrayInner, Ok, Error as GleamError } from "../../../gleam.mjs";
-import { toBitArray as toBitArrayInner, } from "../../../../gleam_stdlib/gleam.mjs";
+import { } from "./gleam.mjs";
 
-import { unwrap as opt_unwrap } from "../../../../gleam_stdlib/gleam/option.mjs";
+import {
+  BitArray as BitArrayInner,
+  Ok as GleamOk,
+  Error as GleamError
+} from "../../../gleam.mjs";
+
+import {
+  toBitArray as toBitArrayInner
+} from "../../../../gleam_stdlib/gleam.mjs";
+
+import {
+  unwrap as opt_unwrap
+} from "../../../../gleam_stdlib/gleam/option.mjs";
 
 
 export const unwrap = opt_unwrap
 export const BitArray = BitArrayInner
 export const toBitArray = (array) => toBitArrayInner(array);
 
-export const newOk = (result) => new Ok(result);
+export const newOk = (result) => new GleamOk(result);
 export const newError = (msg) => new GleamError(msg);
 export const getError = (error) => error
   ? error.message ? error.message
