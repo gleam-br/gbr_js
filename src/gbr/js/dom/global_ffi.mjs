@@ -69,6 +69,9 @@ export function location() {
   return window.location.href;
 }
 
+/**
+ * Location href from window object passed
+ */
 export function locationOf(w) {
   return maybe(
     () => w.location.href,
@@ -77,6 +80,10 @@ export function locationOf(w) {
 
 export function setLocation(w, url) {
   w.location.href = url;
+}
+
+export function host() {
+  return window.location.host;
 }
 
 export function origin() {

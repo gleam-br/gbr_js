@@ -75,6 +75,9 @@ pub fn location_of(window: Window) -> Result(String, String)
 @external(javascript, "./dom/global_ffi.mjs", "setLocation")
 pub fn set_location(window: Window, url: String) -> Nil
 
+@external(javascript, "./dom/global_ffi.mjs", "host")
+pub fn host() -> String
+
 @external(javascript, "./dom/global_ffi.mjs", "origin")
 pub fn origin() -> String
 
