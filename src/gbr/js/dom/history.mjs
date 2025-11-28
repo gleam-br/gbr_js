@@ -9,7 +9,7 @@ import core from "./core.ffi.mjs"
 
 import {
   maybe,
-} from "./util.ffi.mjs";
+} from "./util_ffi.mjs";
 
 
 

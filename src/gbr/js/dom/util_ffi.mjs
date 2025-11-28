@@ -1,8 +1,6 @@
 /**
  * Módulo c/ funções utilitárias.
  */
-import { } from "./gleam.mjs";
-
 import {
   BitArray as BitArrayInner,
   Ok as GleamOk,
@@ -32,7 +30,7 @@ export const getError = (error) => error
 
 export function checkNull(value, errMsg) {
   if (value !== null && value !== undefined) {
-    return new Ok(value);
+    return newOk(value);
   } else {
     return newError(errMsg + " : " + "Value is null");
   }

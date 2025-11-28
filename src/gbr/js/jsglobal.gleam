@@ -56,46 +56,39 @@ pub fn document(window: Window) -> JsDocument
 pub fn request_wake_lock() -> Promise(Result(WakeLockSentinel, Nil))
 
 // window.loacation
-@external(javascript, "./dom/global.ffi.mjs", "location")
-pub fn location() -> String
+// @external(javascript, "./dom/location.ffi.mjs", "location")
+// pub fn location() -> String
 
-@external(javascript, "./dom/global.ffi.mjs", "locationOf")
-pub fn location_of(window: Window) -> Result(String, String)
+// @external(javascript, "./dom/location.ffi.mjs", "locationOf")
+// pub fn location_of(window: Window) -> Result(String, String)
 
-@external(javascript, "./dom/global.ffi.mjs", "setLocation")
-pub fn set_location(window: Window, url: String) -> Nil
+// @external(javascript, "./dom/location.ffi.mjs", "setLocation")
+// pub fn set_location(window: Window, url: String) -> Nil
 
-@external(javascript, "./dom/global.ffi.mjs", "origin")
-pub fn origin() -> String
+// @external(javascript, "./dom/location.ffi.mjs", "origin")
+// pub fn origin() -> String
 
-@external(javascript, "./dom/global.ffi.mjs", "pathname")
-pub fn pathname() -> String
+// @external(javascript, "./dom/location.ffi.mjs", "pathname")
+// pub fn pathname() -> String
 
-// reload exists on the location object but exposed at top level here
-@external(javascript, "./dom/global.ffi.mjs", "reload")
-pub fn reload() -> Nil
+// // reload exists on the location object but exposed at top level here
+// @external(javascript, "./dom/location.ffi.mjs", "reload")
+// pub fn reload() -> Nil
 
-@external(javascript, "./dom/global.ffi.mjs", "reloadOf")
-pub fn reload_of(window: Window) -> Nil
+// @external(javascript, "./dom/location.ffi.mjs", "reloadOf")
+// pub fn reload_of(window: Window) -> Nil
 
-// window.history
-@external(javascript, "./dom/global.ffi.mjs", "historyPushState")
-pub fn history_push() -> Result(Nil, String)
+// @external(javascript, "./dom/location.ffi.mjs", "host")
+// pub fn host() -> String
 
-@external(javascript, "./dom/global.ffi.mjs", "historyReplaceState")
-pub fn history_replace() -> Result(Nil, String)
+// @external(javascript, "./dom/location.ffi.mjs", "getHash")
+// pub fn get_hash() -> Result(String, Nil)
 
-@external(javascript, "./dom/global.ffi.mjs", "host")
-pub fn host() -> String
+// @external(javascript, "./dom/location.ffi.mjs", "getSearch")
+// pub fn get_search() -> Result(String, Nil)
 
 @external(javascript, "./dom/global.ffi.mjs", "focus")
 pub fn focus(window: Window) -> Nil
-
-@external(javascript, "./dom/global.ffi.mjs", "getHash")
-pub fn get_hash() -> Result(String, Nil)
-
-@external(javascript, "./dom/global.ffi.mjs", "getSearch")
-pub fn get_search() -> Result(String, Nil)
 
 @external(javascript, "./dom/global.ffi.mjs", "innerHeight")
 pub fn inner_height(window: Window) -> Int

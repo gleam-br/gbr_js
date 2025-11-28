@@ -25,20 +25,17 @@ pub type RequestID
 ///
 pub type WakeLockSentinel
 
-@external(javascript, "./dom/util.ffi.mjs", "isIE")
+@external(javascript, "./dom/core.ffi.mjs", "isIE")
 pub fn is_ie() -> Bool
 
-@external(javascript, "./dom/util.ffi.mjs", "isEdge")
+@external(javascript, "./dom/core.ffi.mjs", "isEdge")
 pub fn is_edge() -> Bool
 
-@external(javascript, "./dom/util.ffi.mjs", "isFirefox")
+@external(javascript, "./dom/core.ffi.mjs", "isFirefox")
 pub fn is_firefox() -> Bool
 
 @external(javascript, "./dom/core.ffi.mjs", "global")
 pub fn global() -> Global
-
-@external(javascript, "./dom/core.ffi.mjs", "get")
-pub fn get(in: Global, property: String) -> Result(a, String)
 
 @external(javascript, "./dom/core.ffi.mjs", "newObject")
 pub fn new_object() -> Object
@@ -53,10 +50,10 @@ pub fn get_object_inner_key(
   property: String,
 ) -> Result(a, String)
 
-@external(javascript, "./dom/util.ffi.mjs", "try_")
+@external(javascript, "./dom/core.ffi.mjs", "try_")
 pub fn try(cb: fn(a) -> b, prefix_error: String) -> Result(Option(b), String)
 
-@external(javascript, "./dom/util.ffi.mjs", "tryAsync_")
+@external(javascript, "./dom/core.ffi.mjs", "tryAsync_")
 pub fn try_async(
   cb: fn(a) -> b,
   prefix_error: String,
@@ -74,5 +71,5 @@ pub fn try_execute_async(
   try_execute_(app, "async", cb, req)
 }
 
-@external(javascript, "./dom/util.ffi.mjs", "tryExecute_")
+@external(javascript, "./dom/core.ffi.mjs", "tryExecute_")
 fn try_execute_(app: a, mode: String, cb: fn(b) -> c, req: b) -> d

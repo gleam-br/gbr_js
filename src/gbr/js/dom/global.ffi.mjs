@@ -5,7 +5,7 @@ import {
   maybe,
   maybeAsync,
   checkNull,
-} from './util.ffi.mjs'
+} from './util_ffi.mjs'
 
 export function self() {
   return globalThis;

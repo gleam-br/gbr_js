@@ -8,7 +8,7 @@
 import {
   maybe,
   newError
-} from "./util.ffi.mjs";
+} from "./util_ffi.mjs";
 
 export function href(location, url) {
   maybe(
