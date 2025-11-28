@@ -1,7 +1,7 @@
 import gleam/javascript/array.{type Array}
 import gleam/javascript/promise.{type Promise}
 
-import gbr/js/file.{type File}
+import gbr/js/jsfile.{type File}
 
 pub type Handle(a)
 
@@ -15,59 +15,59 @@ pub type DirectoryHandle =
 pub type FileHandle =
   Handle(F)
 
-@external(javascript, "./dom/file_system_ffi.mjs", "showDirectoryPicker")
+@external(javascript, "./dom/file_system.ffi.mjs", "showDirectoryPicker")
 pub fn show_directory_picker() -> Promise(Result(DirectoryHandle, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "name")
+@external(javascript, "./dom/file_system.ffi.mjs", "name")
 pub fn name(handle: Handle(a)) -> String
 
-@external(javascript, "./dom/file_system_ffi.mjs", "getDirectoryHandle")
+@external(javascript, "./dom/file_system.ffi.mjs", "getDirectoryHandle")
 pub fn get_directory_handle(
   handle: DirectoryHandle,
   name: String,
   create: Bool,
 ) -> Promise(Result(DirectoryHandle, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "getFileHandle")
+@external(javascript, "./dom/file_system.ffi.mjs", "getFileHandle")
 pub fn get_file_handle(
   handle: DirectoryHandle,
   name: String,
   create: Bool,
 ) -> Promise(Result(FileHandle, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "removeEntry")
+@external(javascript, "./dom/file_system.ffi.mjs", "removeEntry")
 pub fn remove_entry(
   handle: DirectoryHandle,
   name: String,
   create: Bool,
 ) -> Promise(Result(Nil, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "allEntries")
+@external(javascript, "./dom/file_system.ffi.mjs", "allEntries")
 pub fn all_entries(
   handle: DirectoryHandle,
 ) -> Promise(Result(#(Array(DirectoryHandle), Array(FileHandle)), String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "showOpenFilePicker")
+@external(javascript, "./dom/file_system.ffi.mjs", "showOpenFilePicker")
 pub fn show_open_file_picker() -> Promise(Result(Array(FileHandle), String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "showSaveFilePicker")
+@external(javascript, "./dom/file_system.ffi.mjs", "showSaveFilePicker")
 pub fn show_save_file_picker() -> Promise(Result(FileHandle, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "getFile")
+@external(javascript, "./dom/file_system.ffi.mjs", "getFile")
 pub fn get_file(file_handle: FileHandle) -> Promise(Result(File, String))
 
 pub type WritableFileStream
 
-@external(javascript, "./dom/file_system_ffi.mjs", "createWritable")
+@external(javascript, "./dom/file_system.ffi.mjs", "createWritable")
 pub fn create_writable(
   file_handle: FileHandle,
 ) -> Promise(Result(WritableFileStream, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "write")
+@external(javascript, "./dom/file_system.ffi.mjs", "write")
 pub fn write(
   file_handle: WritableFileStream,
   content: BitArray,
 ) -> Promise(Result(Nil, String))
 
-@external(javascript, "./dom/file_system_ffi.mjs", "close")
+@external(javascript, "./dom/file_system.ffi.mjs", "close")
 pub fn close(file_handle: WritableFileStream) -> Promise(Result(Nil, String))

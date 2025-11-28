@@ -49,7 +49,7 @@ pub fn decoder() {
   decode.success(n)
 }
 
-@external(javascript, "./dom/global_ffi.mjs", "getCurrentPosition")
+@external(javascript, "./dom/global.ffi.mjs", "getCurrentPosition")
 pub fn get_current_position(
   success: fn(Dynamic) -> Nil,
   error: fn(Dynamic) -> Nil,

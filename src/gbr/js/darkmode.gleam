@@ -9,11 +9,11 @@ import gleam/io
 import gleam/option.{type Option}
 import gleam/result
 
-import gbr/js/global
 import gbr/js/jsdocument
 import gbr/js/jselement
-import gbr/js/storage
-import gbr/js/token_list
+import gbr/js/jsglobal as global
+import gbr/js/jsstorage as storage
+import gbr/js/jstoken_list as token_list
 
 // Alias
 //

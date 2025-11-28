@@ -5,9 +5,7 @@ import {
   maybe,
   maybeAsync,
   checkNull,
-  newOk,
-  newError
-} from './util_ffi.mjs'
+} from './util.ffi.mjs'
 
 export function self() {
   return globalThis;
@@ -65,69 +63,9 @@ export async function requestWakeLock() {
     "Error requesting wake lock");
 }
 
-export function location() {
-  return window.location.href;
-}
-
-/**
- * Location href from window object passed
- */
-export function locationOf(w) {
-  return maybe(
-    () => w.location.href,
-    `Error location href=${w}`)
-}
-
-export function setLocation(w, url) {
-  w.location.href = url;
-}
-
-export function host() {
-  return window.location.host;
-}
-
-export function origin() {
-  return window.location.origin;
-}
-
-export function pathname() {
-  return window.location.pathname;
-}
-
-export function reload() {
-  return window.location.reload();
-}
-
-export function reloadOf(w) {
-  return w.location.reload();
-}
 
 export function focus(w) {
   return w.focus();
-}
-
-export function getHash() {
-  const hash = maybe(
-    () => window.location.hash,
-    "Error location hash");
-
-  if (hash == "") {
-    return newError("Empty location hash");
-  }
-
-  return newOk(decodeURIComponent(hash.slice(1)));
-}
-
-export function getSearch() {
-  const search = maybe(
-    () => window.location.search,
-    "Error location search");
-
-  if (search == "") {
-    return newError("Empty location search");
-  }
-
-  return newOk(decodeURIComponent(search.slice(1)));
 }
 
 export function innerHeight(w) {

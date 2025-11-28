@@ -1,3 +1,9 @@
+/**
+/* Javascript event
+/*
+/* - https://developer.mozilla.org/en-US/docs/Web/API/Event
+*/
+
 import { maybeInstanceOf } from "./util_ffi.mjs";
 
 function cast(raw, constructor) {

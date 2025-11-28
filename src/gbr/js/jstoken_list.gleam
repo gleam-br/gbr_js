@@ -6,7 +6,7 @@ pub type DomTokenList
 /// The `add()` method adds the given tokens to the list, omitting any that are already present
 /// https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add
 ///
-@external(javascript, "./dom/token_list_ffi.mjs", "add")
+@external(javascript, "./dom/token_list.ffi.mjs", "add")
 pub fn add(dom_token_list: DomTokenList, tokens: Array(String)) -> Nil
 
 pub fn add_one(dom_token_list: DomTokenList, token: String) -> Nil {
@@ -16,7 +16,7 @@ pub fn add_one(dom_token_list: DomTokenList, token: String) -> Nil {
 /// The `remove()` method removes the specified tokens from the list
 /// https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
 ///
-@external(javascript, "./dom/token_list_ffi.mjs", "remove")
+@external(javascript, "./dom/token_list.ffi.mjs", "remove")
 pub fn remove(dom_token_list: DomTokenList, tokens: Array(String)) -> Nil
 
 pub fn remove_one(dom_token_list: DomTokenList, token: String) -> Nil {
@@ -31,7 +31,7 @@ pub fn remove_one(dom_token_list: DomTokenList, token: String) -> Nil {
 ///   If set to false, then token will only be removed, but not added.
 ///   If set to true, then token will only be added, but not removed.
 ///
-@external(javascript, "./dom/token_list_ffi.mjs", "toggle")
+@external(javascript, "./dom/token_list.ffi.mjs", "toggle")
 pub fn toggle(
   dom_token_list: DomTokenList,
   token: String,
@@ -42,7 +42,7 @@ pub fn toggle(
 /// If the first token doesn't exist, `replace()` returns false immediately,
 /// without adding the new token to the token list.
 /// https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace
-@external(javascript, "./dom/token_list_ffi.mjs", "replace")
+@external(javascript, "./dom/token_list.ffi.mjs", "replace")
 pub fn replace(
   dom_token_list: DomTokenList,
   from_token: String,
