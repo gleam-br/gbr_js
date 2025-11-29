@@ -31,8 +31,8 @@
     "url": "https://github.com/gleam-br/gbr_js/issues"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.2",
-    "bunup": "^0.15.14",
+    "@types/bun": "^1.3.3",
+    "bunup": "^0.16.10",
     "bun-plugin-gleam": "^0.1.3",
     "typescript": "^5.9.3"
   },

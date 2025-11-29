@@ -8,33 +8,33 @@
  */
 
 // CORE
-import jscore from "./gbr/js/jscore.gleam"
-import jsglobal from "./gbr/js/jsglobal.gleam"
+import * as jscore from "./gbr/js/jscore.gleam"
+import * as jsglobal from "./gbr/js/jsglobal.gleam"
 
 // DOM
-import jsdocument from "./gbr/js/jsdocument.gleam"
-import jselement from "./gbr/js/jselement.gleam"
-import jsevent from "./gbr/js/jsevent.gleam"
+import * as jsdocument from "./gbr/js/jsdocument.gleam"
+import * as jselement from "./gbr/js/jselement.gleam"
+import * as jsevent from "./gbr/js/jsevent.gleam"
 
 // UTIL
-import jsdate from "./gbr/js/jsdate.gleam"
-import jsfile from "./gbr/js/jsfile.gleam"
-import jsfile_system from "./gbr/js/jsfile_system.gleam"
-import jsgeolocation from "./gbr/js/jsgeolocation.gleam"
+import * as jsdate from "./gbr/js/jsdate.gleam"
+import * as jsfile from "./gbr/js/jsfile.gleam"
+import * as jsfile_system from "./gbr/js/jsfile_system.gleam"
+import * as jsgeolocation from "./gbr/js/jsgeolocation.gleam"
 
 // MODULE
-import darkmode from "./gbr/js/darkmode.gleam"
+import * as darkmode from "./gbr/js/darkmode.gleam"
 
-export const jscore = jscore
-export const jsglobal = jsglobal
+export const Core = jscore
+export const Global = jsglobal
 
-export const jsdocument = jsdocument
-export const jselement = jselement
-export const jsevent = jsevent
+export const Document = jsdocument
+export const Element = jselement
+export const Event = jsevent
 
-export const jsdate = jsdate
-export const jsfile = jsfile
-export const jsfile_system = jsfile_system
-export const jsgeolocation = jsgeolocation
+export const Date = jsdate
+export const File = jsfile
+export const File_system = jsfile_system
+export const Geolocation = jsgeolocation
 
-export const darkmode = darkmode
+export const Darkmode = darkmode
