@@ -108,6 +108,10 @@ export function scrollY(w) {
   return w.scrollY;
 }
 
+export function scrollTo(x, y) {
+  return w.scrollTo(x, y);
+}
+
 export function open(url, target, features) {
   return maybe(
     () => window.open(url, target, features),

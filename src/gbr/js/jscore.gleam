@@ -6,9 +6,10 @@
 import gleam/javascript/promise.{type Promise}
 import gleam/option.{type Option}
 
-pub type Global
-
 pub type Object
+
+pub type Global =
+  Object
 
 pub type Window =
   Global
@@ -24,6 +25,9 @@ pub type RequestID
 /// https://developer.mozilla.org/en-US/docs/Web/API/WakeLockSentinel
 ///
 pub type WakeLockSentinel
+
+@external(javascript, "./dom/core.ffi.mjs", "isBrowser")
+pub fn is_browser() -> Bool
 
 @external(javascript, "./dom/core.ffi.mjs", "isIE")
 pub fn is_ie() -> Bool
@@ -41,14 +45,14 @@ pub fn global() -> Global
 pub fn new_object() -> Object
 
 @external(javascript, "./dom/core.ffi.mjs", "getObjectKey")
-pub fn get_object_key(in: Object, property: String) -> Result(a, String)
+pub fn get_object_key(in: Object, property: String) -> Option(a)
 
 @external(javascript, "./dom/core.ffi.mjs", "getObjectInnerKey")
 pub fn get_object_inner_key(
   in: Object,
   inner: String,
   property: String,
-) -> Result(a, String)
+) -> Option(a)
 
 @external(javascript, "./dom/core.ffi.mjs", "try_")
 pub fn try(cb: fn(a) -> b, prefix_error: String) -> Result(Option(b), String)

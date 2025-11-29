@@ -24,11 +24,23 @@ import {
 // If you support IE, our recommendation is that you sign-in using Redirect APIs
 // If you as a developer are testing using Edge InPrivate mode, please add "isEdge" to the if check
 //
-const ua = window.navigator.userAgent;
-const msie = ua.indexOf("MSIE ");
-const msie11 = ua.indexOf("Trident/");
-const msedge = ua.indexOf("Edge/");
-const firefox = ua.indexOf("Firefox");
+const ua = window && window.navigator
+  ? window.navigator.userAgent
+  : undefined;
+const msie = ua
+  ? ua.indexOf("MSIE ")
+  : undefined;
+const msie11 = ua
+  ? ua.indexOf("Trident/")
+  : undefined;
+const msedge = ua
+  ? ua.indexOf("Edge/")
+  : undefined;
+const firefox = ua
+  ? ua.indexOf("Firefox")
+  : undefined;
+
+export const isBrowser = ua === window.navigator.userAgent
 
 /** Is browser Internet Explorer */
 export const isIE = msie > 0 || msie11 > 0;
