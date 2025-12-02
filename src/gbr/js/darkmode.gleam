@@ -80,7 +80,7 @@ pub fn is_enabled(in: DarkMode) -> Result(Bool, String) {
   let get_item = storage.get_item(db, name)
 
   case get_item {
-    Ok(item) -> item == "true"
+    Ok(item) -> item == bool.to_string(True)
     Error(err) -> {
       io.println_error(err)
       global.match_media("(prefers-color-scheme: " <> class <> ")")
