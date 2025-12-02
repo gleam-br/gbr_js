@@ -22,11 +22,9 @@ export const toBitArray = (array) => toBitArrayInner(array);
 
 export const newOk = (result) => new GleamOk(result);
 export const newError = (msg) => new GleamError(msg);
-export const getError = (error) => error
-  ? error.message ? error.message
-    : error['0'] ? error['0']
-      : `${error}`
-  : "Unknown error";
+export const getError = (error) => error && error.message
+  ? error.message
+  : `${JSON.stringify(error)}`;
 
 export function checkNull(value, errMsg) {
   if (value !== null && value !== undefined) {
