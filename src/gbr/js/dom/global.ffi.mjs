@@ -109,7 +109,7 @@ export function scrollY(w) {
 }
 
 export function scrollTo(x, y) {
-  return w.scrollTo(x, y);
+  return window.scrollTo(x, y);
 }
 
 export function open(url, target, features) {

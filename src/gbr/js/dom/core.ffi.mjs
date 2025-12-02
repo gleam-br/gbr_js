@@ -16,6 +16,8 @@ import {
 } from "../../../../gleam_stdlib/gleam.mjs";
 
 import {
+  Some,
+  None,
   unwrap as opt_unwrap
 } from "../../../../gleam_stdlib/gleam/option.mjs";
 
