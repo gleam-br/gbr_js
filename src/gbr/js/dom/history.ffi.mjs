@@ -11,13 +11,13 @@ import {
 
 
 export function replaceState(url) {
-  maybe(
+  return maybe(
     () => globalThis.history.replaceState({}, "", url),
     `Error replace history ${url}`)
 }
 
 export function pushState(url) {
-  maybe(
+  return maybe(
     () => globalThis.history.pushState({}, "", url),
     `Error push history ${url}`)
 }
