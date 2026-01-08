@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Update changelog by @github-actions[bot]
+- Update changelog by @github-actions[bot]
 
 ### Fixed
+- Version gleam and package json by @salespaulo
 - Returning maybe history functions by @salespaulo
 - Fix package.json version to v1.0.3 by @salespaulo
 
