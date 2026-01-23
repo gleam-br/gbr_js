@@ -3,8 +3,8 @@
  */
 import {
   BitArray as BitArrayInner,
-  Ok as GleamOk,
-  Error as GleamError
+  Result$Ok,
+  Result$Error,
 } from "../../../gleam.mjs";
 
 import {
@@ -20,8 +20,8 @@ export const unwrap = opt_unwrap
 export const BitArray = BitArrayInner
 export const toBitArray = (array) => toBitArrayInner(array);
 
-export const newOk = (result) => new GleamOk(result);
-export const newError = (msg) => new GleamError(msg);
+export const newOk = Result$Ok
+export const newError = Result$Error
 export const getError = (error) => error && error.message
   ? error.message
   : `${JSON.stringify(error)}`;
