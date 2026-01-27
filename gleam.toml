@@ -1,5 +1,5 @@
 name = "gbr_js"
-version = "1.0.4"
+version = "1.0.5-alpha001"
 target = "javascript"
 
 description = "🎃 Gleam javascript library by @gleam-br"
