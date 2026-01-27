@@ -1,9 +1,9 @@
+[![Package Version](https://img.shields.io/hexpm/v/gbr_js)](https://hex.pm/packages/gbr_js)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/gbr_js/)
+
 # 🎃 Gleam javascript library.
 
 Javascript library to gleam by @gleam-br.
-
-[![Package Version](https://img.shields.io/hexpm/v/gbr_js)](https://hex.pm/packages/gbr_js)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/gbr_js/)
 
 ```sh
 gleam add gbr_js@1
@@ -16,8 +16,6 @@ pub fn main() -> Nil {
   js.try()
 }
 ```
-
-Further documentation can be found at <https://hexdocs.pm/gbr_js>.
 
 ## Development
 
