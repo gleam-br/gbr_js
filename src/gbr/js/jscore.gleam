@@ -3,10 +3,12 @@
 ////
 //// Manage globalThis instance
 
+import gleam/dynamic.{type Dynamic}
 import gleam/javascript/promise.{type Promise}
 import gleam/option.{type Option}
 
-pub type Object
+pub type Object =
+  Dynamic
 
 pub type Global =
   Object
@@ -45,7 +47,7 @@ pub fn global() -> Global
 pub fn new_object() -> Object
 
 @external(javascript, "./dom/core.ffi.mjs", "getObjectKey")
-pub fn get_object_key(in: Object, property: String) -> Option(a)
+pub fn get_object_key(in: Object, property: String) -> Option(Object)
 
 @external(javascript, "./dom/core.ffi.mjs", "getObjectInnerKey")
 pub fn get_object_inner_key(
