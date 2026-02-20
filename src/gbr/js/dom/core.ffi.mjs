@@ -71,14 +71,21 @@ export const BitArray = BitArrayInner
 /** Helper to convert js type bit array to gleam type */
 export const toBitArray = (array) => toBitArrayInner(array);
 
+// The one and only way of getting global scope in all environments
+// https://stackoverflow.com/q/3277182/1008999
+const _global = typeof window === 'object' && window.window === window
+  ? window : typeof self === 'object' && self.self === self
+    ? self : typeof global === 'object' && global.global === global
+      ? global
+      : this
+
 /**
  * Return globalThis/window instance
  *
  * @returns Instance of globalThis/window
  */
 export function global() {
-  if (globalThis) return globalThis
-  if (window) return window
+  _global
 }
 
 export function newObject() {
