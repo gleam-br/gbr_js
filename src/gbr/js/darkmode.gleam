@@ -95,15 +95,18 @@ pub fn from_media(in: DarkMode) -> Result(Bool, String) {
 
   case is_enabled(in) {
     Ok(True) -> {
-      jsdocument.body()
-      |> jselement.class_list()
-      |> token_list.add_one(class)
+      let _ =
+        jsdocument.body()
+        |> jselement.class_list()
+        |> token_list.add_one(class)
       Ok(True)
     }
     Ok(False) -> {
-      jsdocument.body()
-      |> jselement.class_list()
-      |> token_list.remove_one(class)
+      let _ =
+        jsdocument.body()
+        |> jselement.class_list()
+        |> token_list.remove_one(class)
+
       Ok(False)
     }
     Error(err) -> Error(err)
@@ -116,18 +119,14 @@ pub fn from_media(in: DarkMode) -> Result(Bool, String) {
 ///
 pub fn toggle(in: DarkMode, force: Option(Bool)) -> Result(Bool, String) {
   let BrowserDarkMode(name:, class:, ..) = in
-
+  let assert Ok(element) = jsdocument.query_selector(in.selector)
   let enabled =
-    jsdocument.body()
+    element
     |> jselement.class_list()
     |> token_list.toggle(class, force)
 
   use db <- result.try(storage.local())
-
-  use _ <- result.map(
-    db
-    |> storage.set_item(name, bool.to_string(enabled)),
-  )
+  use _ <- result.map(storage.set_item(db, name, bool.to_string(enabled)))
 
   enabled
 }
