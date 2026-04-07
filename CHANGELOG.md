@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Add fn.ffi.mjs pure functions and fix window object verification to node runtime by @salespaulo
+- Add GEMINI file and using Result$... by @salespaulo
+
+### Changed
+- Upgrade gh action/checkout@6 by @salespaulo
+- Improve elements to disabled styles and more by @salespaulo
+- Format gleam.toml deps, targets and metadata by @salespaulo
+- Ajust readme by @salespaulo
+- Up version to 1.0.5-alpha001 by @salespaulo
+- Update changelog by @github-actions[bot]
+
+### Fixed
+- Fix warnings in tsconfig by @salespaulo
+
 ## [1.0.4] - 2026-01-08
 
 ### Changed
@@ -77,6 +94,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## New Contributors
 * @salespaulo made their first contribution
+[unreleased]: https://github.com/gleam-br/gbr_js/compare/v1.0.4..HEAD
 [1.0.4]: https://github.com/gleam-br/gbr_js/compare/v1.0.3..v1.0.4
 [1.0.3]: https://github.com/gleam-br/gbr_js/compare/v1.0.2..v1.0.3
 [1.0.2]: https://github.com/gleam-br/gbr_js/compare/v1.0.1..v1.0.2
