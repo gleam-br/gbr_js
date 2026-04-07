@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add GEMINI file and using Result$... by @salespaulo
 
 ### Changed
+- Merge branch 'main' of https://github.com/gleam-br/gbr_js by @salespaulo
+- Update changelog by @github-actions[bot]
 - Upgrade gh action/checkout@6 by @salespaulo
 - Improve elements to disabled styles and more by @salespaulo
 - Format gleam.toml deps, targets and metadata by @salespaulo
@@ -20,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update changelog by @github-actions[bot]
 
 ### Fixed
+- Uses selector not body by @salespaulo
 - Fix warnings in tsconfig by @salespaulo
 
 ## [1.0.4] - 2026-01-08
